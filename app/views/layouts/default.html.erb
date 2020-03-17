@@ -7,10 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=#{Figaro.env.google_map_api_key}' %>
   </head>
 
   <body>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY=<%=ENV['google_map_api_key']%>"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Figaro.env.google_map_api_key %>">
+    </script>
     <h1>Hello wolrd</h1>
     <%= yield %>
   </body>
