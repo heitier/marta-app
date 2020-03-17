@@ -1,5 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<%= @buses %>
+<h2>You are currently standing at ...</h2>
+<p><% @location.my_location %> </p>
+
+<h2>The closet bus are ...</h2>
+<% if @bus_count >1 %>
+  <% @nearby_bus.each do |bus| %>
+  <p>
+    <strong>Route:</strong> <%= bus["ROUTE"]%> <br>
+    <strong>Vehicle Number :</strong> <%= bus["VEHICLE"]%> <br>
+    <strong>Next stop:</strong> <%= bus["TIMEPOINT"]%> <br>
+  </p>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8
+      });
+    }
+  </script>
+<%end%>
+
+<% else %>
+<P>
+  .. Sorry there no bus nearby. Call uber
+</P>
+
+<%end%>
+
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
