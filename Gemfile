@@ -56,7 +56,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # takes a url and converts it to a ruby object
-gem 'httparty', '~> 0.18.0'
+gem 'httparty', '~> 0.21.0'
 #Provides object geocoding (by street or IP address), reverse geocoding (coordinates to street address), distance queries for ActiveRecord and Mongoid, result caching, and more. Designed for Rails but works with Sinatra and other Rack frameworks too.
 gem 'geocoder', '~> 1.6', '>= 1.6.1'
 #hides out API key
